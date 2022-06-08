@@ -10,7 +10,32 @@ bodyClass: "page-contact"
             <div class="service service-single">
                 <h1 class="title">{{page.title}}</h1>
                 {% include call.html show_button=false %}
-                <div class="content mt-4">{{content}}</div>
+                
+                <div class="content mt-4">{{content}}
+
+<!-- modify this form HTML and place wherever you want your form -->
+<form id="fs-frm" name="survey-form" accept-charset="utf-8" action="https://formspree.io/f/xrgjjavp" method="post">
+  <fieldset id="fs-frm-inputs">
+    <label for="full-name">Full Name</label>
+    <input type="text" name="name" id="full-name" placeholder="First and Last" required="">
+    <label for="email-address">Email Address</label>
+    <input type="email" name="_replyto" id="email-address" placeholder="email@domain.tld" required="">
+    <fieldset id="fs-frm-selects">
+      <label for="timely">1. Selección de Servicios.</label>
+      <select name="timely" id="timely" required="">
+        <option value="" selected="" disabled="">Selección</option>
+        <option value="1">Desarrollo de Software</option>
+        <option value="2">Servicios SysAdmin</option>
+        <option value="3">Servicios DevOps</option>
+      </select>
+    </fieldset>
+    <label for="message">Comentarios Adicionales</label>
+    <textarea rows="3" name="message" id="message" placeholder="descripción de requerimientos o consultas." required=""></textarea>
+    <input type="hidden" name="_subject" id="email-subject" value="Consultas">
+  </fieldset>
+  <input type="submit" value="Enviar Consultas">
+</form>
+                </div>
             </div>
         </div>
     </div>
